@@ -1,0 +1,86 @@
+ <Paper className={classes.paper}>
+ 
+ <Typography variant="h5">Servicios</Typography>
+
+          <FormControl component="fieldset" className={classes.formControl}>
+            <FormLabel component="legend">Baño privado</FormLabel>
+            <RadioGroup
+              row
+              name="gender2"
+              className={classes.group}
+              onChange={event => onCheckBanio(event.target.value)}
+            >
+              <FormControlLabel
+                value="si"
+                control={<Radio color="primary" />}
+                label="Si"
+                labelPlacement="start"
+              />
+              <FormControlLabel
+                value="no"
+                control={<Radio color="primary" />}
+                label="No"
+                labelPlacement="start"
+              />
+            </RadioGroup>
+            <FormHelperText>Se comparten baño</FormHelperText>
+          </FormControl>
+          <Divider variant="middle" />
+          <FormControl component="fieldset" className={classes.formControl}>
+            <FormLabel component="legend">Amoblado</FormLabel>
+            <RadioGroup
+              row
+              name="gender2"
+              className={classes.group}
+              onChange={event => onCheckAmoblado(event.target.value)}
+            >
+              <FormControlLabel
+                value="si"
+                control={<Radio color="primary" />}
+                label="Si"
+                labelPlacement="start"
+              />
+              <FormControlLabel
+                value="no"
+                control={<Radio color="primary" />}
+                label="No"
+                labelPlacement="start"
+              />
+            </RadioGroup>
+            <FormHelperText>Tiene muebles</FormHelperText>
+          </FormControl>
+          <Divider variant="middle" />
+
+          <Typography variant="h5">Precio</Typography>
+
+          <React.Fragment>
+            <form
+              className={classes.root}
+              autoComplete="off"
+              onChange={console.log("sdas")}
+            >
+              <FormControl className={classes.formControl}>
+                <InputLabel shrink htmlFor="age-label-placeholder">
+                  Min - Max
+                </InputLabel>
+                <Select
+                  value={filtroprecio}
+                  onChange={event => onCheckPrecio(event.target.value)}
+                  input={<Input name="age" id="age-label-placeholder" />}
+                  displayEmpty
+                  name="age"
+                  className={classes.selectEmpty}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={0}>0000 - 0499</MenuItem>
+                  <MenuItem value={500}>0500 - 0999</MenuItem>
+                  <MenuItem value={1000}>1000 - 9999</MenuItem>
+                </Select>
+                <FormHelperText>Precio Minimo - Precio Maximo</FormHelperText>
+              </FormControl>
+            </form>
+            <Divider variant="middle" />
+          </React.Fragment>
+     </Paper>

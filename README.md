@@ -1,2 +1,0 @@
-# Enkassa
-Created with CodeSandbox

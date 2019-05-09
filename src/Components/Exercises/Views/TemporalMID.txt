@@ -1,0 +1,76 @@
+     {Casas.map(([group, Casas]) =>
+          !category || category === group
+            ? Casas.map(
+                ({
+                  id,
+                  banioPrivado,
+                  amoblado,
+                  descripcion,
+                  precio,
+                  tipoCasa,
+                  tamanio
+                }) =>
+                  (!banioPrivado || banioPrivado === filtrobanio) &&
+                  amoblado === filtroamoblado ? (
+                    <div className={classes.root}>
+                      <Paper className={classes.papercasas}>
+                        <Grid container spacing={16}>
+                          <Grid item>
+                            <ButtonBase className={classes.image}>
+                              <img
+                                className={classes.img}
+                                alt="complex"
+                                src={hole}
+                              />
+                            </ButtonBase>
+                          </Grid>
+                          <Grid item xs={12} sm container>
+                            <Grid
+                              item
+                              xs
+                              container
+                              direction="column"
+                              spacing={16}
+                            >
+                              <Grid item xs>
+                                <Typography gutterBottom variant="subtitle1">
+                                  {tipoCasa}
+                                </Typography>
+                                <Typography gutterBottom>
+                                  {descripcion.slice(0, 50)}
+                                </Typography>
+                                <Typography color="textSecondary">
+                                  Baño privado: {banioPrivado} | Tamaño:{" "}
+                                  {tamanio} | Amoblado : {filtroamoblado}
+                                </Typography>
+                              </Grid>
+                              <Grid item>
+                                <Button style={{ flexgrow: 1 }}>Ver mas</Button>
+                                <IconButton>
+                                  <FavoriteIcon />
+                                </IconButton>
+                                <IconButton>
+                                  <ShareIcon />
+                                </IconButton>
+                              </Grid>
+                            </Grid>
+                            <Grid item>
+                              <Typography variant="subtitle1">
+                                S/. {precio}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Paper>
+                    </div>
+                  ) : null
+              )
+            : null
+        )}
+
+        <Typography variant="h4" gutterBottom>
+          {id}
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom style={{ marginTop: 20 }}>
+          {descripcion}
+        </Typography>
